@@ -10,12 +10,16 @@ DECLARATION
 FONCTIONS
 */
 
-  let activeArea = id => {
-    map.querySelectorAll('.is-active').forEach((item) => {
-        item.classList.remove('is-active');
-      })
-    document.querySelector('#list-FR-' + id).classList.add('is-active');
-    document.querySelector('#region-' + id).classList.add('is-active');
+let activeArea = id => {
+
+  map.querySelectorAll('.is-active').forEach((item) => {
+    item.classList.remove('is-active');
+  })
+
+    if (id !== undefined) {
+      document.querySelector('#list-FR-' + id).classList.add('is-active');
+      document.querySelector('#region-' + id).classList.add('is-active');
+    }
   }
 
 
@@ -34,4 +38,8 @@ FONCTIONS
       let id = this.id.replace('list-FR-', '');
       activeArea(id);
     })
+  })
+
+  map.addEventListener('mouseover', function () {
+    activeArea();
   })
