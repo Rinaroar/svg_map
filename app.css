@@ -10,8 +10,8 @@
   transition: fill 0.3s;
 }
 
-.map__image path:hover {
-  fill: #48eec6;
+.map__image .is-active path {
+  fill : #af7668;
 }
 
 
@@ -24,4 +24,9 @@
   color: inherit;
   text-decoration: none;
   transition: color 0.3s;
+}
+
+.map__list a.is-active {
+  color: #af7668;
+  font-weight: bold;
 }
